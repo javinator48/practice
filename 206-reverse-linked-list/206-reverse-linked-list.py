@@ -10,9 +10,13 @@ class Solution:
         
        
         while (curr): 
-            next_temp = curr.next 
-            curr.next = prev
-            prev = curr
-            curr = next_temp
+            curr_backup = curr.next
+            curr.next = prev 
+            prev = curr 
+            curr = curr_backup
+            # next_temp = curr.next 
+            # curr.next = prev
+            # prev = curr
+            # curr = next_temp
         return prev 
             
