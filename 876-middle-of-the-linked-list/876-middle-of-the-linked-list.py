@@ -4,10 +4,20 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        arr = [head]
+#     def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+#         arr = [head]
       
-        while arr[-1].next: 
-            #print(arr)
-            arr.append(arr[-1].next)
-        return arr[len(arr)//2]
+#         while arr[-1].next: 
+#             #print(arr)
+#             arr.append(arr[-1].next)
+#         return arr[len(arr)//2]
+#using fast pointer slow pointer technique. 
+    def middleNode(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        fast = head
+        slow = head
+        while(fast and fast.next): 
+            fast = fast.next.next
+            
+            slow = slow.next
+        return slow
+        
