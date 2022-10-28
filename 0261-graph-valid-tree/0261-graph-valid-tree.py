@@ -14,6 +14,7 @@ class Solution:
         #build an adjancy list from the edges list 
         adjList = self.buildAdjacencyList(n, edges)
         visited = set()
+        
         def hasCycle(v, parent): 
             visited.add(v)
             #traverse all neighbors 
