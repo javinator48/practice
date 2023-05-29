@@ -42,7 +42,7 @@ class Solution:
     def isValidSudoku(self, board: List[List[str]]) -> bool: 
         # cols = {}
         # rows = {}
-        # squares = {} 
+        squares = {} 
         cols = collections.defaultdict(set) 
         rows = collections.defaultdict(set)
         squares = collections.defaultdict(set) #key = (r /3, c/3)
@@ -56,6 +56,11 @@ class Solution:
                 cols[c].add(board[r][c])
                 rows[r].add(board[r][c])
                 squares[(r // 3, c // 3)].add(board[r][c])
+                
+#                 cols.setdefault(c, set()).add(board[r][c])
+#                 rows.setdefault(r, set()).add(board[r][c])
+#                 squares.setdefault((r // 3, c // 3), set()).add(board[r][c])
+                    
         return True
 
     def checkValidHelper(self,aboard, arows, acols, asquares,  R,C):
